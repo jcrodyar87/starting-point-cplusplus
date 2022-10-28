@@ -4,8 +4,18 @@ using namespace std;
 
 int main()
 {
-    // Conditionals
+    // For - factorial
     int number;
+    int factorial = 1;
+    cout << "Please enter a number" << endl;
+    cin >> number;
+    for (int i = 1; i <= number; i++)
+    {
+        factorial *= i;
+    }
+    cout << "Factorial of " << number << " is " << factorial <<endl;
+    system("pause>0");
+    // Conditionals
     int reversedNumber = 0;
     cout << "Please enter a number" << endl;
     cin >> number;
