@@ -96,8 +96,18 @@ void whileExample()
         counter++;
     }
 }
+template<typename T>
+void Swap(T& a, T& b) {
+    T temp = a;
+    a = b;
+    b = temp;
+}
+
 int main()
 {
+    int a = 3, b = 7;
+    Swap(a, b);
+    cout << a << " - " << b << endl;
     // functions
     factorial();
     system("pause>0");
