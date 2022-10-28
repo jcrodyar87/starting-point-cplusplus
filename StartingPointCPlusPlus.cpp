@@ -108,9 +108,10 @@ void Swap(T& a, T& b) {
 class YouTubeChannel {
 private:
     string Name;
-    string OwnerName;
     int SubscribersCount;
     list<string> PublishedVideoTitles;
+protected:
+    string OwnerName;
 public:
     YouTubeChannel(string name, string ownerName) {
         Name = name;
@@ -136,6 +137,12 @@ public:
     }
     void PublishVideo(string title) {
         PublishedVideoTitles.push_back(title);
+    }
+};
+
+class MusicYouTubeChannel :public YouTubeChannel {
+    MusicYouTubeChannel(string name, string ownerName) :YouTubeChannel(name, ownerName) {
+
     }
 };
 
