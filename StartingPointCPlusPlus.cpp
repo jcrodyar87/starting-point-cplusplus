@@ -2,7 +2,32 @@
 #include <iostream>
 using namespace std;
 
-int main()
+// reversing number
+void reversed(int number)
+{
+    int reversedNumber = 0;
+    while (number != 0)
+    {
+        reversedNumber *= 10;
+        reversedNumber += number % 10;
+        number /= 10;
+    }
+    cout << "Reversed number: " << reversedNumber << endl;
+}
+
+void evaluateNumber()
+{
+    // Conditionals
+    int number;
+    cout << "Please enter a number" << endl;
+    cin >> number;
+    (number % 2 == 0) ? cout << "You have entered even number " << endl : cout << "You have entered odd number" << endl;
+    // reversing number
+    reversed(number);
+}
+
+
+void factorial()
 {
     // For - factorial
     int number;
@@ -13,23 +38,10 @@ int main()
     {
         factorial *= i;
     }
-    cout << "Factorial of " << number << " is " << factorial <<endl;
-    system("pause>0");
-    // Conditionals
-    int reversedNumber = 0;
-    cout << "Please enter a number" << endl;
-    cin >> number;
-    (number % 2 == 0) ? cout << "You have entered even number " << endl : cout << "You have entered odd number" << endl;
-    // reversing number
-    while (number != 0)
-    {
-        reversedNumber *= 10;
-        reversedNumber += number % 10;
-        number /= 10;
-    }
-    cout << "Reversed number: " << reversedNumber << endl;
-    system("pause>0");
-    // operations
+    cout << "Factorial of " << number << " is " << factorial << endl;
+}
+void operations()
+{
     float num1, num2;
     char operation;
     cout << "Calculator" << endl;
@@ -41,18 +53,12 @@ int main()
     case '*': cout << num1 << operation << num2 << "=" << num1 * num2; break;
     case '/': cout << num1 << operation << num2 << "=" << num1 / num2; break;
     }
-    // while
-    int counter = 100;
-    while (counter <= 500)
-    {
-        cout << counter << endl;
-        counter++;
-    }
-    system("pause>0");
-    //  I/O
+}
+
+void variables()
+{
     cout << "Helo! My name is Juan C Rodriguez" << endl;
     cout << "Please enter your annual salary" << endl;
-    // Variables
     float annualSalary;
     cin >> annualSalary;
     float monthlySalary = annualSalary / 12;
@@ -79,5 +85,29 @@ int main()
     }
     string adult = isOlderThan17 ? "you are an adult" : "You aren't an adult";
     cout << adult << endl;
+}
+
+void whileExample()
+{
+    int counter = 100;
+    while (counter <= 500)
+    {
+        cout << counter << endl;
+        counter++;
+    }
+}
+int main()
+{
+    // functions
+    factorial();
+    system("pause>0");
+    evaluateNumber();
+    // operations
+    operations();
+    // while
+    whileExample();
+    system("pause>0");
+    // Variables - I/O
+    variables();
     system("pause>0");
 }
