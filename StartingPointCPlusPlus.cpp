@@ -1,5 +1,6 @@
 #include <ctime>
 #include <iostream>
+#include <list>
 using namespace std;
 
 // reversing number
@@ -103,8 +104,52 @@ void Swap(T& a, T& b) {
     b = temp;
 }
 
+
+class YouTubeChannel {
+private:
+    string Name;
+    string OwnerName;
+    int SubscribersCount;
+    list<string> PublishedVideoTitles;
+public:
+    YouTubeChannel(string name, string ownerName) {
+        Name = name;
+        OwnerName = ownerName;
+        SubscribersCount = 0;
+    }
+    void GetInfo()
+    {
+        cout << "Name: " << Name << endl;
+        cout << "SubscribersCount: " << SubscribersCount << endl;
+        for (string videoTitle : PublishedVideoTitles)
+        {
+            cout << videoTitle << endl;
+        }
+    }
+    void Subscribe() {
+        SubscribersCount++;
+    }
+    void Unsubscribe() {
+        if (SubscribersCount > 0) {
+            SubscribersCount--;
+        }
+    }
+    void PublishVideo(string title) {
+        PublishedVideoTitles.push_back(title);
+    }
+};
+
 int main()
 {
+    // class
+    YouTubeChannel ytChannel("JCRY","Juan C. Rodriguez");
+    ytChannel.PublishVideo("Python in 30 minutes");
+    ytChannel.PublishVideo("C++ Intermediates");
+    ytChannel.PublishVideo("JS Begginer");
+    ytChannel.Subscribe();
+    ytChannel.Subscribe();
+    ytChannel.GetInfo();
+    system("pause>0");
     int a = 3, b = 7;
     Swap(a, b);
     cout << a << " - " << b << endl;
